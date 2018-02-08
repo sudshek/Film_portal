@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment, Dropdown, Select, Dimmer, Icon,Responsive } from 'semantic-ui-react';
-import Header1 from './header';
+
 import { Redirect } from 'react-router';
 import {Link} from 'react-router-dom';
 
@@ -80,7 +80,7 @@ export default class login extends Component {
           }
         return (
             <div>
-                <Header1 />
+
                 <div style={mystyle}>
 
                 <Responsive minWidth={1125}><br /><br /><br /><br /></Responsive>

@@ -203,11 +203,12 @@ class RegisterForm extends Component {
     contact:'',
     password:'',
     confirmPassword:'',
+    address1:'',
+    address2:'', 
     city:'',
     state:'',
     pin:'',
-    address1:'',
-    address2:'', 
+    
     verificationcode:Math.floor(Math.random() * (10000 - 1000)) + 1000,
     show:false,
     redirection:false
