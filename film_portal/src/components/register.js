@@ -234,7 +234,7 @@ handleSubmitSignUp=e=>{
         this.setState({active:true});
     }
     else{ 
-      fetch('http://localhost:8080/signup',{
+      fetch('http://localhost:8080/user/newUser',{
           method:'POST',
           headers:{
               'Accept':'application/json',
@@ -251,13 +251,11 @@ handleSubmitSignUp=e=>{
                   "city":this.state.city,
                   "state":this.state.state,
                   "pin":this.state.pin,
-                  "verificationcode":this.state.verificationcode,
-                  "latitude":this.props.coords.latitude,
-                  "longitude":this.props.coords.longitude
+                  "verificationcode":this.state.verificationcode
           })
       }).then((response)=>response.json())
           .then((responseJson)=>{
-              if(responseJson.success==false){
+              if(!responseJson.success){
                 console.log("registration failed");
                 this.setState({
                   active:true,
@@ -287,7 +285,7 @@ handleSubmitSignUp=e=>{
               this.setState({
                 active:true,
                 errorHeader:'error!',
-                errorMessage:'an unexpected error occured'
+                errorMessage:'an unexpected error7436876487368 occured'
             }) 
           });
 }
@@ -507,9 +505,4 @@ return (
 )
 }
 }
-export default geolocated({
-  positionOptions: {
-    enableHighAccuracy: false,
-  },
-  userDecisionTimeout: 5000,
-})(RegisterForm);
+export default RegisterForm;
